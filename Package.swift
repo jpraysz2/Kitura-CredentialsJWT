@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://gitlab.everial.com/jpraysz/kiturajp.git", from: "1.1.6"),
-        .package(url: "https://github.com/jpraysz2/Kitura-Credentials.git", from: "1.0.0"),
+        .package(url: "https://github.com/jpraysz2/Kitura-Credentials.git", from: "1.0.1"),
         .package(url: "https://github.com/Kitura/Swift-JWT.git", from: "3.6.200"),
     ],
     targets: [
