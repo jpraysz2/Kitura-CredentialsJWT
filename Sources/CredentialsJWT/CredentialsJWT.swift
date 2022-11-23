@@ -14,8 +14,7 @@
  * limitations under the License.
  **/
 
-import Kitura
-import KituraNet
+import KituraJP
 import Credentials
 import SwiftJWT
 import Foundation

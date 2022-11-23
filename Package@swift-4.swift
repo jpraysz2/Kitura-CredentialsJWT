@@ -14,6 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
+        .package(url: "https://gitlab.everial.com/jpraysz/kiturajp.git", from: "1.1.6"),
         .package(url: "https://github.com/Kitura/Kitura-Credentials.git", from: "2.5.200"),
         .package(url: "https://github.com/Kitura/Swift-JWT.git", from: "3.6.200"),
     ],
@@ -22,7 +23,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "CredentialsJWT",
-            dependencies: ["Credentials", "SwiftJWT"]
+            dependencies: ["KituraJP","Credentials", "SwiftJWT"]
         ),
         .testTarget(
             name: "CredentialsJWTTests",
