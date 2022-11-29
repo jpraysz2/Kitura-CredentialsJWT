@@ -213,7 +213,7 @@ public class CredentialsJWT<C: Claims>: CredentialsPluginProtocol, CredentialsTo
             return
         }
 
-        let token: String
+        var token: String
         if rawToken.hasPrefix("Bearer") {
             let rawTokenParts = rawToken.split(separator: " ", maxSplits: 2)
             
@@ -229,7 +229,11 @@ public class CredentialsJWT<C: Claims>: CredentialsPluginProtocol, CredentialsTo
         else {
             token = rawToken
         }
-        
+        if(token.contains("~")){
+            // we have to deal with an extended token
+            let tmptokenparts = token.split(separator: "~")
+            token = String(tmptokenparts[0])
+        }
         // This call uses `generateNewProfile` (below) to generate a new user profile if needed.
         getProfileAndCacheIfNeeded(token: token, options: options) { result in
             switch result {
